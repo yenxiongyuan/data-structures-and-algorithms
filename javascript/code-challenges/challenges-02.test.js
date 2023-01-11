@@ -6,41 +6,51 @@ CHALLENGE 1 - Review
 
 Write a function named raisedToTheThird that takes in an array of numbers and returns a new array of each of those numbers raised to the 3rd power (hint: look up Math.pow()). Use forEach to solve this problem.
 expect(raisedToTheThird([2, 4, 5, -7, 0])).toStrictEqual([8, 64, 125, -343, 0])
+
 ------------------------------------------------------------------------------------------------ */
 
 const raisedToTheThird = (arr) => {
   // Solution code here...
-  const thirdPowerArr = [];
+  const toThirdPower = [];
 
   arr.forEach((num) => {
-    thirdPowerArr.push(Math.pow(num, 3));
+    toThirdPower.push(Math.pow(num, 3));
   });
-  return thirdPowerArr;
+  return toThirdPower;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
 Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1.
-expect(addOne([2, 3, 5, 11])).toStrictEqual([3, 4, 6, 12]
+expect(addOne([2, 3, 5, 11])).toStrictEqual([3, 4, 6, 12])
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
   // Solution code here...
-  arr.map((num) => {
-    num + 1;
+  const addOneArr = arr.map((num) => {
+    return num + 1;
   });
-  return addOne;
+  return addOneArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
 Write a function named addQuestion that, given an array of strings, uses map to return a new array containing each string followed by a question mark character.
+expect(addQuestion(["hello", "301", "students"])).toStrictEqual([
+      "hello?",
+      "301?",
+      "students?",
+    ]);
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
   // Solution code here...
+  const newArr = arr.map((str) => {
+    return `${str}?`;
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,20 +61,44 @@ Write a function named forLoopTwoToThe that, given an array of integers as input
 You may choose to complete this challenge using a for loop, for...in syntax, or for...of syntax.
 
 For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
+
+expect(forLoopTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
+    expect(forLoopTwoToThe([0, 4, 5]).length).toStrictEqual(3);
+  });
+
+  test("It should return decimals if the integer is negative", () => {
+    expect(forLoopTwoToThe([-1, -2, -3])).toStrictEqual([0.5, 0.25, 0.125]);
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
+  const newArr = arr.map((num) => {
+    return Math.pow(2, num);
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
 Write a function named forEachTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4, but uses forEach instead of a for loop.
+
+  const toThirdPower = [];
+
+  arr.forEach((num) => {
+    toThirdPower.push(Math.pow(num, 3));
+  });
+  return toThirdPower;
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
+  const newArr = [];
+
+  arr.forEach((num) => {
+    newArr.push(Math.pow(2, num));
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
