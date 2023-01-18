@@ -38,7 +38,7 @@ const sortStarWarsCharacters = (starWarsArr) => {
 CHALLENGE 2
 
 1. Write a function named removeThree that takes an index and an array.
-2.The function should removes three items in the array starting with the value at the index.
+2. The function should removes three items in the array starting with the value at the index.
   arr.slice(idx)
 
 expect(removeThree(2, [1, 2, 3, 4, 5, 6, 7, 8])).toStrictEqual([
