@@ -175,15 +175,21 @@ CHALLENGE 6
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 
 expect(reversedString("Code 301")).toStrictEqual("103 edoC");
+
+['C', 'o', 'd','e', ' ', '3','0', '1']
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
   // Solution code here...
 
-  const reversedStringNew = str.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue;
+
+  const reversedStringNew = str.split('').reduce((accumulator, currentValue) => {
+    // console.log(str.split(''));
+    // console.log(currentValue);
+    return currentValue + accumulator;
   }, '');
   return reversedStringNew;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
