@@ -45,43 +45,56 @@ const updateAnimal = (arr, callback) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function called sortNames that takes an array of names and sorts them alphabetically. Capital letters should come before lowercase letters.
+1. Write a function called sortNames that takes an array of names and
+2. sorts them alphabetically.
+3. Capital letters should come before lowercase letters.
 
 For example: 'Cat' would come before 'apple'
+expect(sortNames(["able", "Bob"])[0]).toStrictEqual("Bob");
 ------------------------------------------------------------------------------------------------ */
 
 const sortNames = (arr) => {
   // Solution code here...
+  // console.log(arr)
+  return arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function called sortNumbers that takes an array of numbers and sorts them from smallest to largest.
+1. Write a function called sortNumbers that takes an array of numbers and
+2. sorts them from smallest to largest.
 
 HINT: Beware... JS default is "Lexical" ordering.
+expect(sortNumbers([8, 3, 2, 9, 12, 1, 115])).toStrictEqual([
+      1, 2, 3, 8, 9, 12, 115,
+    ]);
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbers = (arr) => {
   // Solution code here...
+  return arr.sort((a, b) => a - b);
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named sortBackwards that takes in an array of numbers and returns the same array, with the numbers sorted, largest to smallest.
+1. Write a function named sortBackwards that takes in an array of numbers and
+2. returns the same array, with the numbers sorted, largest to smallest.
 
 HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 ------------------------------------------------------------------------------------------------ */
 
 const sortBackwards = (arr) => {
   // Solution code here...
+  return arr.sort((a, b) => b - a);
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function named alphabetize that takes in an array of strings and returns the same array with the strings sorted alphabetically.
+1. Write a function named alphabetize that takes in an array of strings and
+2. returns the same array with the strings sorted alphabetically.
 
 In this alphabetization, capital letters come before lower case letters.
 
@@ -90,12 +103,15 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
+ return arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named sortByPrice that takes in an array of objects, each of which has a 'price' property, and sorts those objects by price, lowest to highest, returning the same array.
+1. Write a function named sortByPrice that takes in an array of objects,
+2. each of which has a 'price' property,and
+3. sorts those objects by price, lowest to highest, returning the same array.
 
 Here is an example of the input:
 [
@@ -103,10 +119,23 @@ Here is an example of the input:
   {name: 'Bookmark', price: 2.50},
   {name: 'Tote bag', price: 15}
 ];
+
+  expect(
+      sortByPrice([
+        { name: "Sweatshirt", price: 45 },
+        { name: "Bookmark", price: 2.5 },
+        { name: "Tote bag", price: 15 },
+      ])
+    ).toStrictEqual([
+      { name: "Bookmark", price: 2.5 },
+      { name: "Tote bag", price: 15 },
+      { name: "Sweatshirt", price: 45 },
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+  // Solution code here....
+  // console.log(arr[0].price)
+ return arr.sort((a, b) => a.price - b.price);
 };
 
 /* ------------------------------------------------------------------------------------------------
