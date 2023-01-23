@@ -49,48 +49,66 @@ expect(removeThree(2, [1, 2, 3, 4, 5, 6, 7, 8])).toStrictEqual([
 
 const removeThree = (idx, arr) => {
   // Solution code here...
-  return arr.splice(idx, 3);
+  // console.log(idx, arr);
+  // console.log(arr.splice(idx, 3));
+  arr.splice(idx, 3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named joinArray that takes an array and joins all of the elements together in one string on a space.
+1. Write a function named joinArray that takes an array and
+2. joins all of the elements together in one string on a space.
+
+expect(joinArray(["hello", "301", "students"])).toStrictEqual(
+      "hello 301 students"
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
   // Solution code here...
+  return arr.join(' ');
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named howMuchPencil that takes in a string, as written on the side of a pencil.
+1. Write a function named howMuchPencil that takes in a string, as written on the side of a pencil.
 
-As you sharpen the pencil, the string will become shorter and shorter, starting by removing the first letter.
+2. As you sharpen the pencil, the string will become shorter and shorter, starting by removing the first letter.
 
-Your function should use slice within a loop and return an array of each successive string result from losing letters to the sharpener, until nothing is left.
+3. Your function should use slice within a loop and
+4. return an array of each successive string result from losing letters to the sharpener, until nothing is left.
 
 For example, if the input is 'Welcome', the output will be:
 ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', ''].
 ------------------------------------------------------------------------------------------------ */
 
 const howMuchPencil = (str) => {
+
+  // console.log(str);
+
   let result = [];
   // Solution code here...
+  for (let i = 0; i < str.length + 1; i++) {
+    let newStr = str.slice(i);
+    result.push(newStr);
+  }
   return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function name wordsToCharList that, given a string as input, returns a new array where every element is a character of the input string.
+1. Write a function name wordsToCharList that, given a string as input,
+2. returns a new array where every element is a character of the input string.
 
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  return arr.split('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,11 +116,26 @@ CHALLENGE 6
 
 You are making a grocery list for ingredients needed in the gruffalo crumble recipe, below. Rather than taking the entire recipe, you only want a list of the item names.
 
-Write a function named listFoods that takes in the recipe and returns a new array of the food items without any amount or units. Just the name. For example, '1 cup flour' will return 'flour'.
+1. Write a function named listFoods that takes in the recipe and
+2. returns a new array of the food items without any amount or units. Just the name. For example, '1 cup flour' will return 'flour'.
 
 Use slice for this function, maybe more than once. The Array.indexOf() method may also be helpful.
 
 Do not use split for this function.
+
+   expect(listFoods(gruffaloCrumble)).toStrictEqual([
+      "Gruffalo",
+      "oats",
+      "brown sugar",
+      "flour",
+      "pure maple syrup",
+      "chopped nuts",
+      "baking soda",
+      "baking powder",
+      "cinnamon",
+      "melted butter",
+      "fresh water",
+    ]);
 ------------------------------------------------------------------------------------------------ */
 
 const gruffaloCrumble = {
@@ -134,8 +167,16 @@ const gruffaloCrumble = {
 };
 
 const listFoods = (recipe) => {
+  // console.log(recipe);
+  // const cutWord = recipe.ingredients[0];
+  // const search = " ";
+  // console.log(cutWord.lastIndexOf(' '));
+
   let result = [];
-  // Solution code here...
+  // // Solution code here...
+  recipe.ingredients.forEach((rec) => {
+    result.push(rec.slice(rec.indexOf(" ", 5) + 1));
+  });
   return result;
 };
 
