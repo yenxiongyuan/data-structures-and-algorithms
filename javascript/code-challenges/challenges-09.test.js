@@ -10,7 +10,7 @@ E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
   // Solution code here...
-
+  return arr.reduce((a, b) => Math.max (a, b));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,13 +34,15 @@ const getCourseKeys = (obj) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named checkValues that takes in an object and a value and returns true if the value is in the object.
+1. Write a function named checkValues that takes in an object and a value and
+2. returns true if the value is in the object.
 
 
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
   // Solution code here...
+  return Object.values(obj).includes(value);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,6 +66,7 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   // Solution code here...
+  return Object.entries(obj).map((arr) => `${arr[0]}: ${arr[1]}`);
 };
 
 
@@ -120,13 +123,16 @@ const characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  arr.forEach((value) => {
+    houses.push(value.house);
+  });
   return houses;
 };
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named hasChildrenValues that uses Object.values to determine if any given character in the data set has children.
+1. Write a function named hasChildrenValues that uses Object.values to determine if any given character in the data set has children.
 
 This function should take in an array of data and a character name and return a Boolean.
 
@@ -137,7 +143,15 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-
+  let hasChildren = false;
+  arr.forEach((char) => {
+    if (Object.values(char).includes(character)) {
+      if (Object.keys(char).includes('children')) {
+        hasChildren = true;
+      }
+    }
+  });
+  return hasChildren;
 };
 
 /* ------------------------------------------------------------------------------------------------
