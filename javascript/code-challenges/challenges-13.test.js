@@ -3,11 +3,20 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function named longestString that takes in an array of strings and returns the index position of the longest string.
+1. Write a function named longestString that takes in an array of strings and
+2. returns the index position of the longest string.
 ------------------------------------------------------------------------------------------------ */
 
 const longestString = (arr) => {
 // Solution code here...
+  let longestStr = "";
+  arr.forEach((str) => {
+    if (str.length > longestStr.length) {
+      longestStr = str;
+    }
+  });
+  return arr.indexOf(longestStr);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,47 +42,65 @@ const firstLetters = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named findHappiness that takes in an array of strings and returns an array containing only the strings from the input array that contain ":)".
+1. Write a function named findHappiness that takes in an array of strings and
+2. returns an array containing only the strings from the input array that contain ":)".
 
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this is great :)', ':)))))']
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
   // Solution code here...
+  return arr.filter((str) => str.includes(":)"));
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named standardizePhoneNumbers that takes in an array of phone number strings in (XXX) XXX-XXXX format and returns an array with the phone number strings in XXXXXXXXXX format.
+1. Write a function named standardizePhoneNumbers that takes in an array of phone number strings in (XXX) XXX-XXXX format and
+2. returns an array with the phone number strings in XXXXXXXXXX format.
 
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
+  return arr.map(
+    (number) =>
+      `${number.substring(1, 4)}${number.substring(6, 9)}${number.substring(
+        10
+      )}`
+  );
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function named onlyOddChars that takes in a string and returns only the odd-index characters from that string.
+1. Write a function named onlyOddChars that takes in a string and
+2.returns only the odd-index characters from that string.
 
 For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
   // Solution code here...
+  let odd = [];
+  let even = [];
+  for (let i = 0; i < str.length; i++) {
+    i % 2 === 0 ? even.push(str[i]) : odd.push(str[i]);
+  }
+  return odd.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
+1. Write a function named allHappy that takes in an array of strings and
+2. returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
   // Solution code here...
+  return arr.every((str) => str.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
