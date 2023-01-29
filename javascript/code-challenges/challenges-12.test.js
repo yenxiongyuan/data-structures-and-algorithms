@@ -16,37 +16,42 @@ const replaceZeros = (string) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named validatePin that uses a regular expression pattern to validate a PIN.
-
-If the PIN is four numerical digits long, return true. Otherwise, return false.
+1. Write a function named validatePin that uses a regular expression pattern to validate a PIN.
+2. If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
   // Solution code here...
+  let regex = /^\d{4}$/;
+  return regex.test(pin);
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named validateWord that uses a regular expression pattern to validate that a word is between 5 and 10 characters long.
-
-If the word is between 5 and 10 characters long, return true. Otherwise, return false.
+1. Write a function named validateWord that uses a regular expression pattern to validate that a word is between 5 and 10 characters long.
+2. If the word is between 5 and 10 characters long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
   // Solution code here...
+   let regex = /^[a-zA-Z]{5,10}$/;
+
+   return regex.test(word);
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named hasNumber that uses a regular expression pattern to determine if a string has one or more letter followed by one or more digit.
-
-If it does, return true. If not, return false.
+1. Write a function named hasNumber that uses a regular expression pattern to determine if
+2. a string has one or more letter followed by one or more digit.
+3. If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const hasNumber = (string) => {
   // Solution code here...
+let pattern = /[a-zA-Z]+\d+/g;
+return pattern.test(string);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,6 +72,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 
 const validateEmail = (email) => {
   // Solution code here...
+    let regexPattern = /^[a-zA-Z0-9]+\.?[a-zA-Z0-9]+@[a-zA-Z0-9]+.(com|org|net)$/g;
+  return regexPattern.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,6 +99,8 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
+    let pattern = /^(\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$/g;
+    return pattern.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
