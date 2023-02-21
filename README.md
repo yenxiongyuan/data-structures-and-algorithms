@@ -24,3 +24,4 @@ Tabel of Contents
 - [Reverse Array](./javascript/reverseArray/README.md)
 - [Insert Shift Array](./javascript/array-insert-shift/README.md)
 - [Binary search](./javascript/array-binary-search/README.md)
+- [Linked list insertions](./javascript/linked-list-insertions/README.md)
