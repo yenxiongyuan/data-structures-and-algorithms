@@ -12,7 +12,7 @@ arguments: value, new value
 adds a new node with the given new value immediately after the first node that has the value specified
 
 ## Whiteboard Process
-![linked-list-insertions whiteboard](../assets/challenge%206.png)
+![linked-list-insertions whiteboard](../assets/challenge-6a.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
