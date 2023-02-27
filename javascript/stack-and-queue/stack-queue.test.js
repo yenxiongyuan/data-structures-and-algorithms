@@ -38,7 +38,7 @@ describe('Stack', () => {
     expect(stack.top.next.next).toBeNull(); // node is = null, no value
 
   });
-  it("Can successfully empty a stack after multiple pops", () => {
+  it('Can successfully empty a stack after multiple pops', () => {
     let stack = new Stack();
     stack.push(1);
     stack.push(2);
