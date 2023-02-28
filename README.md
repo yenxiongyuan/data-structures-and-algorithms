@@ -26,3 +26,4 @@ Tabel of Contents
 - [Binary search](./javascript/array-binary-search/README.md)
 - [Linked list insertions](./javascript/linked-list-insertions/README.md)
 - [linked list zip](./javascript/linked-list-zip/README.md)
+
