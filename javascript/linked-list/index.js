@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 //class is an object
 class LinkedList {
@@ -20,7 +20,7 @@ class LinkedList {
   // To string #2 overwrite the toString to parent
   toString() {
     let current = this.head; //use let will change
-    let text = "";
+    let text = '';
 
     // walk around
     while (current) {
@@ -32,7 +32,7 @@ class LinkedList {
     }
     // return '{ bear } -> { alligator } -> NULL';
 
-    return text + "NULL";
+    return text + 'NULL';
   }
 
   includes(value) {
@@ -47,9 +47,9 @@ class LinkedList {
   }
 }
 
-  // Insert #2
+// Insert #2
 class Node {
-                      //null= default value for next
+  //null= default value for next
   constructor(value, next = null) {
     this.value = value;
     this.next = next;
